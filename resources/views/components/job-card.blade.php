@@ -61,11 +61,21 @@
             @endif
         </div>
 
-        <!-- Apply Button -->
-        <div class="mt-6">
+        @can('apply', $job)
+   
+          <div class="mt-6">
             <a href="{{ route('job.application.create', $job) }}" class="inline-block bg-green-600 hover:bg-green-700 text-white font-medium py-3 px-5 rounded text-center transition-colors duration-200">
                 Apply Now
             </a>
         </div>
+        @else
+        <div class="mt-6">
+            <a class="inline-block bg-green-600 hover:bg-green-700 text-white font-medium py-3 px-5 rounded text-center transition-colors duration-200">
+             Already apllied
+            </a>
+        </div>
+        @endcan
+
+      
     </div>
 </div>

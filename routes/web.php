@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\JobApplicationController;
 use App\Http\Controllers\JobController;
+use App\Http\Controllers\MyJobApplicationController;
 use App\Models\Job;
 use Illuminate\Support\Facades\Route;
 
@@ -28,6 +29,8 @@ Route::get('job/{job}/application/create', [JobApplicationController::class, 'cr
 
 Route::post('job/{job}/application', [JobApplicationController::class, 'store'])
     ->name('job.application.store')->middleware('auth');
+
+Route::resource('my-job-applications', MyJobApplicationController::class);
 
 // Route::middleware('auth')->group(function () {
 //     Route::resource('job.application', JobApplicationController::class)->only(['create', 'store']);
