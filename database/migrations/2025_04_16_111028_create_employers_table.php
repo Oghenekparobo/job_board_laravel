@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('employers', function (Blueprint $table) {
             $table->id();
-            $table->string('company_name');
+            $table->string('company_name')->nullable();
             $table->foreignIdFor(User::class)->nullable()->constrained();
             $table->timestamps();
         });
